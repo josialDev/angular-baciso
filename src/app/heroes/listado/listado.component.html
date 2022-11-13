@@ -1,0 +1,23 @@
+<p>listado works!</p>
+
+<ul>
+    <li *ngFor="let item of nombres; let i = index">
+        {{ i }} {{ item }}
+    </li>
+</ul>
+
+<div>
+    <h3 *ngIf="eliminados.length > 0; else NoBorrados">Elemento eliminados</h3>
+    
+    <ul>
+        <li *ngFor="let e of eliminados">
+            {{ e }}
+        </li>
+    </ul>
+</div>
+<button (click)="remover()">
+    Eliminar
+</button>
+<ng-template #NoBorrados>
+    No hay elementos eliminados
+</ng-template>
